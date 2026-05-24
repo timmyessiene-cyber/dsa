@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./project.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <h2>DSA</h2>
+    <p>Home > Inquiry form</p>
+
+  </header>
+
+  <form id="project-request-form">
+    <div class="project">
+      <h1>Project</h1>
+      <div class="steps">
+        <hr>
+        <hr>
+      </div>
+
+      <label>
+        What are you building?
+        <select name="platform" required>
+          <option value="" disabled selected>Select something</option>
+          <option value="website">Website</option>
+          <option value="web-app">Web App</option>
+        </select>
+      </label>
+
+      <label>
+        What service do you need?
+        <select name="service" required>
+          <option value="" disabled selected>Select something</option>
+          <option value="ui/ux-design">UI/UX Design</option>
+          <option value="frontend">Frontend Dev</option>
+          <option value="full-product-build">Full Product Build</option>
+        </select>
+      </label>
+
+
+      <label>
+        Briefly describe your project?
+        <textarea placeholder="What are you trying to build? What problem does it solve (less than 50 words)"
+          name="description" required></textarea>
+      </label>
+
+      <label>
+        Current state
+        <p>
+          Do you already have anything?
+        </p>
+        <select name="state" required>
+          <option value="" disabled selected>Select something</option>
+          <option value="nothing">I have nothing</option>
+          <option value="just-an-idea">Just an idea</option>
+          <option value="wireframes">Wireframes</option>
+          <option value="existing-design">Existing design</option>
+          <option value="existing-product">Existing product</option>
+        </select>
+      </label>
+
+      <!-- <div>
+        <label>
+          Timeline
+          <select name="timeline">
+            <option value="2-4weeks">2-4 weeks</option>
+            <option value="1-2months">1-2months</option>
+            <option value="4months">4months</option>
+          </select>
+        </label>
+      </div> 
+      let's wait a bit-->
+
+
+      <div class="cta">
+        <button type="button" class="secondary-cta">Previous</button>
+        <button type="button" class="primary-cta next">Next</button>
+      </div>
+    </div>
+
+    <div class="qualification" style="display: none;">
+      <h1>Qualification</h1>
+      <div class="steps">
+        <hr>
+        <hr>
+      </div>
+
+      <label>
+        Business / Project stage
+        <select name="project-stage" required>
+          <option value="" disabled selected>Select something</option>
+
+          <option value="idea-stage">Idea stage</option>
+          <option value="early-startup">Early startup</option>
+          <option value="growing-business">Growing business</option>
+          <option value="established-company">Established company</option>
+        </select>
+      </label>
+
+      <label>
+        Who are you?
+        <select name="position" required>
+          <option value="" disabled selected>Select something</option>
+
+          <option value="founder">Founder</option>
+          <option value="business-owner">Business owner</option>
+          <!-- <option value="web-app">Developer</option> -->
+          <option value="other">other</option>
+        </select>
+      </label>
+
+      <label>
+        Contact Info
+        <input type="text" name="first-name" placeholder="First Name">
+        <input type="text" name="last-name" placeholder="Last Name">
+        <input type="email" name="email" placeholder="Email">
+      </label>
+
+      <label>
+        Why work with us?
+        <textarea placeholder="What are you trying to build? What problem does it solve" name="info-source" required
+          max-length="100"></textarea>
+      </label>
+
+
+      <div class="cta">
+        <button type="button" class="secondary-cta previous">Previous</button>
+        <button class="primary-cta">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <form action="http://localhost:3000" method="POST" style="display: none;">
+    <input type="text" placeholder="name" name="Name">
+    <input type="email" placeholder="email" name="Email">
+    <!-- inputs must have name attributes. without these, express gets an empty {} object -->
+    <select name="Role">
+      <option value="Business">Business</option>
+      <option value="Worker">Worker</option>
+      <!-- name="Name" capital. and name="Email" also capital so the values should start with capital too. this is to respect the airtable field case sensitivity. it's a law based on the airtable ui -->
+    </select>
+    <button>Send</button>
+  </form>
+
+  <div class="thankyou-message" style="display: none;">
+    <h3>Form submited. <br> Thank you, Name.</h3>
+    <p>You'll receive an answer within 24-72 hrs</p>
+    <a href="./index.html">Back to home</a>
+  </div>
+
+  <footer>
+    <div>
+      <div>
+        <p>DSA</p>
+        <p>Digital Design & Development Studio</p>
+      </div>
+
+      <div>
+        <svg>
+          <use href="./sprite.svg#instagram-icon"></use>
+        </svg>
+        <!-- <svg>LinkedIn</svg> ion no yet -->
+      </div>
+    </div>
+    <hr>
+    <p>© 2026 DSA All rights reserved</p>
+
+  </footer>
+
+  <!-- <script src="../server.js" defer></script> -->
+  <script src="./project-request.js" defer></script>
+</body>
+
+</html>

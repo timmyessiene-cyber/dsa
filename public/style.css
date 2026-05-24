@@ -1,0 +1,547 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+  font-family: bricolage grotesque, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-clr: rgba(248, 220, 4, 0.9);
+  --primary-clr-hover: rgba(248, 220, 4, 0.4);
+  --black: rgb(0, 0, 0);
+  --button-dark: rgba(22, 22, 22);
+  --button-light: rgba(22, 22, 22, 0.8);
+  --text-white-bkgrd: rgba(0, 0, 0, 0.5);
+  --text-dark-bkgrd: rgba(255, 255, 255, 0.85);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px 0px; */
+  /* gap: 50px; */
+  align-items: center;
+  /* width: min(1440px, 100%); */
+}
+
+section {
+  width: min(1440px, 100%);
+  /* recall min(....) means width & max width
+  max(....) mean width & min width */
+  padding: 100px 50px;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(1440px, 100%);
+  padding: 10px 10px;
+  background-color: var(--primary-clr);
+  /* position: absolute; */
+}
+
+header h3 {
+  color: var(--black);
+  font-weight: 600;
+}
+
+header>svg {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  /* position: absolute; */
+  margin-left: 60px;
+}
+
+svg {
+  /* stroke: var(--primary-clr); */
+  fill: var(--black);
+  width: 28px;
+  height: 28px;
+  /* background-color: var(--primary-clr); */
+}
+
+.svg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-clr);
+  padding: 20px 20px;
+  width: fit-content;
+  border-radius: 100px;
+}
+
+.primary-cta {
+  color: white;
+  background-color: #161616;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: fit-content;
+}
+
+.primary-cta:hover {
+  background-color: var(--button-light);
+}
+
+.secondary-cta {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: var(--button-light);
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.secondary-cta:hover {
+  background-color: #f5f5f5;
+}
+
+.tetiary-cta {
+  padding: 20px 35px;
+  font-size: 16px;
+  color: var(--primary-clr);
+  background-color: transparent;
+  border: 2px solid var(--primary-clr);
+  border-radius: 100px;
+  transition: background-color, color 0.5s ease;
+  /* works its transition: property/properties,duration(how long it takes), timing-function(ease, linear etc), delay (how long before animation).
+  by default it is transtition: prop, timing function, delay.
+  But we don't necessarily need to have a property for the transition. we can just have transition: time, time-function. then we do the hover of the same element. the animation will still work. so i guess specifying the property will help with better targeting*/
+}
+
+.tetiary-cta:hover {
+  background-color: var(--primary-clr);
+  color: var(--black);
+}
+
+.section-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--primary-clr);
+  align-items: center;
+  padding: 200px 50px;
+}
+
+.section-1 h2,
+p {
+  text-align: center;
+}
+
+.div-cta {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.service-section {
+  display: flex;
+  margin-top: -100px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.div-services {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px 20px;
+  gap: 10px;
+  /* width: clamp(300px 600px 990px); */
+  width: min(990px, 100%);
+  min-width: 300px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+.services {
+  display: flex;
+  gap: 20px;
+  height: fit-content;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.services>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: auto; */
+  gap: 15px;
+  padding: 25px;
+  width: 100%;
+  min-width: 200px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.service>div:hover {
+  background-color: var(--primary-clr-hover);
+}
+
+.section-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: left;
+  gap: 30px
+}
+
+.section-2>div {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  gap: 20px;
+  justify-content: start;
+}
+
+.section-2>div::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  /* width: 500px; */
+  width: min(500px, 100%);
+  min-width: 350px;
+  height: 373px;
+  background-color: grey;
+  justify-content: end;
+  padding: 30px;
+  border-radius: 45px;
+}
+
+.project-card>div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.project-card p {
+  text-align: left;
+}
+
+.project-card button {
+  width: fit-content;
+}
+
+.section-3 {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  /* align-items: center; */
+  background-color: var(--black);
+  height: 800px;
+  align-items: center;
+}
+
+.section-3 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style-position: inside;
+}
+
+.section-3 svg {
+  fill: var(--primary-clr);
+  width: 30px;
+}
+
+.work-check {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+.nowork-cross {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+.section-3>div {
+  display: flex;
+  flex-direction: column;
+  width: min(600px, 100%);
+  gap: 20px;
+}
+
+/* .section-3>div>div {
+  display: flex;
+  flex-direction: column;
+   width: min(600px, 100%);
+gap: 20px;
+} */
+
+*/ .section-3 h1 {
+  line-height: 63px;
+}
+
+.section-3 h1,
+h3 {
+  color: var(--primary-clr);
+}
+
+.section-3 li {
+  color: var(--text-dark-bkgrd);
+}
+
+.section-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.section-4 p {
+  text-align: left;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* repeat(val1, val2). val1 is number of columns val2 is the size of the columns. it can also be used with grid-template-columns*/
+  row-gap: 50px;
+  column-gap: 50px;
+  place-content: center;
+  width: 100%;
+}
+
+.steps h3 {
+  color: var(--primary-clr);
+  background-color: var(--black);
+  width: fit-content;
+  padding: 15px 22px;
+  border-radius: 100px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--primary-clr);
+  border-radius: 20px;
+}
+
+.step div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.pricing {
+  display: flex;
+  gap: 30px;
+  padding: 10px;
+}
+
+.pricing>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: clamp(300px, 345px, 390px); */
+  /* clamp has commas */
+  width: min(345px, 100%);
+  min-width: 250px;
+  height: fit-content;
+  background-color: var(--black);
+  border-radius: 1 solid var(--black);
+  padding: 50px;
+  gap: 50px;
+  border-radius: 20px;
+}
+
+.pricing>div:hover {
+  border: 1 solid var(--primary-clr);
+}
+
+.pricing h3 {
+  text-align: center;
+}
+
+.pricing ul {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-dark-bkgrd);
+  gap: 10px;
+  list-style-position: inside;
+}
+
+.price {
+  font-weight: 600;
+  color: var(--text-dark-bkgrd);
+  font-size: 20px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  width: min(1440px, 100%);
+  background-color: var(--primary-clr);
+  padding: 20px;
+  gap: 20px;
+}
+
+footer>div {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.dsa p {
+  text-align: left;
+}
+
+footer hr {
+  background-color: var(--black);
+  height: 2px;
+  border: none;
+}
+
+@media (max-width: 840px) {
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing>div {
+    padding: 30px;
+  }
+}
+
+@media (max-width:660px) {
+  /* 
+  section {
+    padding: 150px 20px;
+  } 
+    this isn't working because of specificity. css proiritizes specificity
+  */
+
+  header>svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  header>button {
+    display: none;
+  }
+
+  nav {
+    display: none;
+    /* display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(250px, 100%);
+    z-index: 10;
+    border-left: 1px solid var(--black);
+    background-color: var(--black);
+    padding-top: 20px;
+    padding-left: 20px; */
+  }
+
+  nav a {
+    color: var(--primary-clr);
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .section-1,
+  .section-2,
+  .section-3,
+  .section-4,
+  .section-5 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-2>div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-3 {
+    flex-direction: column;
+    gap: 50px;
+    height: fit-content;
+    /* align-items: center; */
+    text-align: center;
+  }
+
+  .section-3>div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-check,
+  .nowork-cross {
+    justify-content: center;
+  }
+
+  .section-3 h1 {
+    line-height: 63px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,207 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+  font-family: bricolage grotesque, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-clr: rgba(248, 220, 4, 0.9);
+  --primary-clr-hover: rgba(248, 220, 4, 0.4);
+  --black: rgb(0, 0, 0);
+  --button-dark: rgba(22, 22, 22);
+  --button-light: rgba(22, 22, 22, 0.8);
+  --text-white-bkgrd: rgba(0, 0, 0, 0.5);
+  --text-dark-bkgrd: rgba(255, 255, 255, 0.85);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  /* padding: 0px 20px; */
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+  /* width: min(1440px, 100%); */
+  /* justify-content: center; */
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  gap: 10px;
+  width: min(1440px, 100%);
+}
+
+section {
+  width: min(1440px, 100%);
+  /* recall min(....) means width & max width
+  max(....) mean width & min width */
+  padding: 100px 50px;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+svg {
+  /* stroke: var(--primary-clr); */
+  fill: var(--black);
+  width: 28px;
+  height: 28px;
+  /* background-color: var(--primary-clr); */
+}
+
+.primary-cta {
+  color: white;
+  background-color: #161616;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: fit-content;
+}
+
+.primary-cta:hover {
+  background-color: var(--button-light);
+}
+
+.secondary-cta {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: var(--button-light);
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.secondary-cta:hover {
+  background-color: #f5f5f5;
+}
+
+.tetiary-cta {
+  padding: 20px 35px;
+  font-size: 16px;
+  color: var(--primary-clr);
+  background-color: transparent;
+  border: 2px solid var(--primary-clr);
+  border-radius: 100px;
+  transition: background-color, color 0.5s ease;
+  /* works its transition: property/properties,duration(how long it takes), timing-function(ease, linear etc), delay (how long before animation).
+  by default it is transtition: prop, timing function, delay.
+  But we don't necessarily need to have a property for the transition. we can just have transition: time, time-function. then we do the hover of the same element. the animation will still work. so i guess specifying the property will help with better targeting*/
+}
+
+.tetiary-cta:hover {
+  background-color: var(--primary-clr);
+  color: var(--black);
+}
+
+/* section>h1 {
+  text-align: left;
+} */
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: left;
+  gap: 30px
+}
+
+.title {
+  width: 100%;
+}
+
+.templates {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  gap: 20px;
+  justify-content: start;
+  /* flex-wrap: wrap; */
+}
+
+.templates::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  /* width: 500px; */
+  width: min(500px, 100%);
+  min-width: 400px;
+  height: 373px;
+  background-color: grey;
+  justify-content: end;
+  padding: 30px;
+  border-radius: 45px;
+}
+
+.project-card>div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.project-card p {
+  text-align: left;
+}
+
+.project-card button {
+  width: fit-content;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  width: min(1440px, 100%);
+  background-color: var(--primary-clr);
+  padding: 20px;
+  gap: 20px;
+}
+
+footer>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer hr {
+  background-color: var(--black);
+  height: 2px;
+  border: none;
+  width: 100%;
+}
+
+footer>p {
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .templates {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    /* width: min(500px, 100%); */
+    min-width: 350px;
+  }
+}
