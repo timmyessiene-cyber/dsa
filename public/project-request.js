@@ -5,6 +5,10 @@ const next = document.querySelector('.next')
 const previous = document.querySelector('.previous');
 const message = document.querySelector('.thankyou-message');
 
+function toHomePage() {
+  window.location.href = "./index.html";
+}
+
 // ids don't take # like they would in css
 
 next.addEventListener("click", () => {
