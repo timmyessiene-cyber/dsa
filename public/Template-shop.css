@@ -95,11 +95,13 @@ svg {
 .tetiary-cta {
   padding: 20px 35px;
   font-size: 16px;
-  color: var(--primary-clr);
+  color: var(--black);
+  width: fit-content;
+  text-decoration: none;
   background-color: transparent;
-  border: 2px solid var(--primary-clr);
+  border: 2px solid var(--black);
   border-radius: 100px;
-  transition: background-color, color 0.5s ease;
+  transition: all 0.5s ease;
   /* works its transition: property/properties,duration(how long it takes), timing-function(ease, linear etc), delay (how long before animation).
   by default it is transtition: prop, timing function, delay.
   But we don't necessarily need to have a property for the transition. we can just have transition: time, time-function. then we do the hover of the same element. the animation will still work. so i guess specifying the property will help with better targeting*/
@@ -108,6 +110,7 @@ svg {
 .tetiary-cta:hover {
   background-color: var(--primary-clr);
   color: var(--black);
+  border-color: var(--primary-clr);
 }
 
 /* section>h1 {
@@ -147,17 +150,23 @@ section {
   /* width: 500px; */
   width: min(500px, 100%);
   min-width: 400px;
-  height: 373px;
-  background-color: grey;
+  height: fit-content;
+  background-color: #e5e5e5;
   justify-content: end;
   padding: 30px;
   border-radius: 45px;
+  gap: 20px;
+}
+
+.project-card>img {
+  width: 100%;
+  height: 100%;
 }
 
 .project-card>div {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
 .project-card p {
