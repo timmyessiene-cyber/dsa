@@ -211,6 +211,6 @@ footer>p {
 
   .project-card {
     /* width: min(500px, 100%); */
-    min-width: 350px;
+    min-width: 320px;
   }
 }
